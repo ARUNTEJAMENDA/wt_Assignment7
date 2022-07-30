@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery.js"></script>
+    <title>Mid2Q2 | N574</title>
+</head>
+<body>
+    <p>Text will be changed in 2 secs</p>
+    <p>Text will be changed in 2 secs</p>
+    <p>Text will be changed in 2 secs</p>
+    <script>
+        setTimeout(function(){$("p").text("Mid2 Question Paper")},2000);
+        $("p").css("color","red");
+        var css = {
+            "display":"flex",
+            "flex-direction":"column",
+            "justify-content":"center",
+            "align-items":"center",
+            "width":"100vw",
+            "height":"100vh",
+            "margin":0,
+            "padding":0,
+            "font-family":"cursive"
+        }
+        $("body").css(css);
+    </script>
+</body>
+</html>
