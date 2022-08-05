@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery.js"></script>
+    <title>Mid2Q3 | N574</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{
+            height:100vh;
+            width:100vw;
+            display:flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items:center;
+        }
+        .x{color:green;}
+        .y{color:red;}
+    </style>
+</head>
+<body>
+    <div><input type="number" name="age" id="age" oninput="//go1(this.value)" autofocus>
+        <button onclick="go1()" type="submit" id="check">Submit</button>
+    </div>
+    <div id="msg"></div>
+    <script>
+        var option=0;
+        var x = document.getElementById("age");
+        var m = document.getElementById("msg");
+        // alert(age);
+        function f(){x.focus();}
+        function go1(age = $("#age").val()){
+            if(age<=10){
+                s(1);
+            }else if(10<age && age<=50){
+                s(2);
+            }else if(50<age && age<=100){
+                s(3);
+            }else if(100<age && age<=200){
+                s(4);
+            }else{s(5);}
+        }
+        function s(option){
+            console.log(option);
+            switch(option){
+                case 1:
+                    m.innerHTML = "<span class='x'>option is<10</span>";
+                    break
+                case 2:
+                    m.innerHTML  = "<span class='x'>option is between 11 and 50</span>";
+                    break
+                case 3:
+                    m.innerHTML = "<span class='x'>option is between 51 and 100</span>";
+                    break
+                case 4:
+                    m.innerHTML = "<span class='x'>option is between 101 and 200</span>";
+                    break
+                case 5:
+                    m.innerHTML = "<span class='y'>not Valid</span>";
+                    break
+            }
+        }
+    </script>
+</body>
+</html>
