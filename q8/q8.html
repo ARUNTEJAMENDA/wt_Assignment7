@@ -12,7 +12,12 @@
             height:100vh;
             width:100vw;
             display:flex;
-            flex-direction: column;
+            justify-content:center;
+            align-items:center;
+        }
+        form{
+            display:grid;
+            grid-template-columns: auto auto;
             justify-content:center;
             align-items:center;
         }
@@ -21,6 +26,63 @@
     </style>
 </head>
 <body>
-    
+    <!-- <div id="form"> -->
+    <form onsubmit="return goall();">
+        <label for="name">Name: </label><input type="text" id="name" name="name" value="arun@gmail.com" required autofocus>
+        <div id="namemsg"></div><dummy></dummy>
+        <!--  -->
+        <label for="pass">Password: </label><input type="text" id="pass" name="pass" value="arun" required>
+        <label for="repass">Re-enter Password: </label><input type="text" id="repass" name="repass" value="arun" required>
+        <div id="passmsg"></div><dummy></dummy>
+        <!--  -->
+        <label for="phno">Phone Number: </label><input type="text" id="phno" name="phno" value = "9000599108" required>
+        <div id="phnomsg"></div><dummy></dummy>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+    <script>
+        function mail(){
+            var m = $("#name").val();
+            //---------------
+            var regex = /[A-z0-9_\.]+@gmail.com$/
+            if(regex.test(m)){
+                $("#namemsg").html("<span class='x'>mail good.</span>");
+                return true;
+            }else{
+                $("#namemsg").html("<span class='y'>mail issue!</span>");
+                return false;
+            }
+            //---------------
+        }
+        function passcheck(){
+            var p1 = $("#pass").val();
+            var p2 = $("#repass").val();
+            // console.log(p1+" > "+p2);
+            if(p1==p2){
+                $("#passmsg").html("<span class='x'>pass good.</span>");
+                return true;
+            }else{
+                $("#passmsg").html("<span class='y'>pass issue.</span>");
+                return false;
+            }
+        }
+        function phcheck(){
+            var n = $("#phno").val();
+            //---------------
+            var regex1 = /[789][0-9]{9}$/
+            if(regex1.test(n)){
+                $("#phnomsg").html("<span class='x'>phno good.</span>");
+                return true;
+            }else{
+                $("#phnomsg").html("<span class='y'>phno issue!.</span>");
+                return false;
+            }
+            //---------------
+        }
+        function goall(){
+            var x = mail();var y = passcheck();var z = phcheck();
+            if(x && y && z){console.log("yes");return true;}else{console.log("no");return false;}
+        }
+    </script>
 </body>
 </html>
