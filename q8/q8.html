@@ -43,7 +43,7 @@
         function mail(){
             var m = $("#name").val();
             //---------------
-            var regex = /[A-z0-9_\.]+@gmail.com$/
+            var regex = /[A-z0-9_\.]+@gmail.com/
             if(regex.test(m)){
                 $("#namemsg").html("<span class='x'>mail good.</span>");
                 return true;
